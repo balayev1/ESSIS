@@ -4,15 +4,15 @@ In silico pipeline for predicting functionally significant somatic single-nucleo
 
 ## Table of Contents
 
-• [Introduction](#introduction)  
-    ◦ [What is ESSIS?](#what-is-essis)  
-    ◦ [How does it work in summary?](#how-does-it-work-in-summary)
+• Introduction  
+  ◦ What is ESSIS?  
+  ◦ How does it work in summary?
 
-• [Dependencies and Installation](#dependencies-and-installation)  
-    ◦ [Install dependencies via conda](#install-dependencies-via-conda)  
-    ◦ [Install auxiliary dependencies](#install-auxiliary-dependencies)  
-    ◦ [Install ESSIS](#install-essis)
+• Dependencies and Installation  
+  ◦ Install dependencies via conda  
+  ◦ Install auxiliary dependencies  
+  ◦ Install ESSIS
 
-• [Input](#input)  
-• [Usage](#usage)  
-• [Output](#output)  
+• Input  
+• Usage  
+• Output
