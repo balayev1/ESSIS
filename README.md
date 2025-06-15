@@ -23,7 +23,7 @@ ESSIS is a bioinformatic pipeline that takes somatic mutations stored as a GRang
 
 ### How does it work in summary?  
 Pipeline ESSIS is split into six main steps:  
-I.  Parse genomic elements from the mandatory file (in Rds format) provided by the user (see format in `examples/`).  
+I.  Parse genomic elements from the mandatory file (in Rds format) provided by the user (see format in `data/`).  
 II. Identify regions with an excess number of mutations by running [fishHook](https://github.com/mskilab-org/fishHook) on each tumor-cohort + mutation-class combination.  
 III. Rank all mutations in each hypermutated region and flag the highest-ranked ones as effectors based on the excess mutation count and specified biological criteria.  
 IV. Merge all non-flagged mutations across cohorts and rerun fishHook separately for each mutation class to catch excess mutations in regions with low statistical power.  
