@@ -111,7 +111,6 @@ GRanges object with 889848 ranges and 3 metadata columns:
   [889847] unprocessed_pseudogene        CTCF
   [889848]                     NA        CTCF
 ```
-
 **Warning:** Input mutation GRanges object must contain columns:
 
 ● REF: denotes reference allele
