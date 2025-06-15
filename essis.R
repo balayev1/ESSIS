@@ -88,7 +88,7 @@ option_list <- list(
     make_option("--mirna_binding-types", type = "character", default = NULL, help = "Comma-separated list of miRNA-binding element types (e.g. 3UTR); requires column mirBS_status in mutation RDS file with factors 0 and 1."),
     make_option("--mirna-type", type = "character", default = NULL, help = "miRNA label"),
     make_option("--ctcf-type", type = "character", default = NULL, help = "CTCF-binding motif label"),
-    make_option("--intron-types", type = "character", default = NULL, help = "Comma-separated list of coding element types (e.g. intron); requires column spliceSiteMod_status in mutation RDS file with factors 0 and 1."))
+    make_option("--intron-types", type = "character", default = NULL, help = "Comma-separated list of intronic element types (e.g. intron); requires column spliceSiteMod_status in mutation RDS file with factors 0 and 1."))
 
 opt <- parse_args(OptionParser(option_list = option_list))
 
