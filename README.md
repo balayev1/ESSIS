@@ -74,14 +74,14 @@ cd ESSIS # change dir to ESSIS/
 
 Required input files:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● A tab-delimited file with columns standing for tumor cohort/type, mutation class (SNV or INDEL), path/to/valid_mut_granges.Rds and optionally path/to/read_depth.Rds for fishHook. This is the preview of a tab-delimited file:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● A tab-delimited file with columns standing for tumor cohort/type, mutation class (SNV or INDEL), `path/to/valid_mut_granges.Rds` and optionally `path/to/read_depth.Rds` for fishHook. This is the preview of a tab-delimited file:
 ```bash
 tumor	class	mut_path	ave_read_depth
 PAAD	SNV	data/PAAD.sSNV.ann.Rds	data/Ave_RD_by1kbwindows_paad.Rds
 PAAD	INDEL	data/PAAD.sINDEL.ann.Rds	data/Ave_RD_by1kbwindows_paad.Rds
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● A GRanges object in Rds format with genomic regions and required column `type`. These are first lines of the file with genomic element regions:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● A GRanges object in Rds format with genomic regions and required column `type`. These are the first lines:
 ```bash
 GRanges object with 889848 ranges and 3 metadata columns:
            seqnames            ranges strand |              gene_name
