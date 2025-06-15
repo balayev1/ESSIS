@@ -9,9 +9,6 @@
 # User-specific files
 .Ruserdata
 
-# Example code in package build process
-*-Ex.R
-
 # Output files from R CMD build
 /*.tar.gz
 
@@ -20,6 +17,15 @@
 
 # RStudio files
 .Rproj.user/
+
+# data files
+*.Rds
+*.log
+*.txt
+*.tsv
+*.csv
+*.rd
+*.Rd
 
 # produced vignettes
 vignettes/*.html
