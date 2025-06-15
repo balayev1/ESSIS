@@ -29,7 +29,7 @@ IV. Merge all non-flagged mutations across cohorts and rerun fishHook separately
 V. Re-rank and flag effectors in these newly identified regions.  
 VI. Apply a rule-based filter to flag any remaining mutations satisfying specific biological criteria.  
 
-For a detailed description of biological criteria applied to each element type, please see documentation at [Biological Rules](#).
+For a detailed description of biological criteria applied to each element type, please see [documentation](#).
 
 
 
