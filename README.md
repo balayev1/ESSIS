@@ -73,6 +73,7 @@ cd ESSIS # change dir to ESSIS/
 ## Input
 
 Required input files:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● A tab-delimited file with columns standing for tumor cohort/type, mutation class (SNV or INDEL), path/to/valid_mut_granges.Rds and optionally path/to/read_depth.Rds for fishHook. This is the preview of a tab-delimited file:
 ```bash
 tumor	class	mut_path	ave_read_depth
 PAAD	SNV	data/PAAD.sSNV.ann.Rds	data/Ave_RD_by1kbwindows_paad.Rds
