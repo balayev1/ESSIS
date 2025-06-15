@@ -70,5 +70,102 @@ cd ESSIS # change dir to ESSIS/
 
 **Warning:** Follow each installation step sequentially! Always run ESSIS from within the `ESSIS/` directory.
 
+## Input
+
+Required input files:
+```bash
+tumor	class	mut_path	ave_read_depth
+PAAD	SNV	data/PAAD.sSNV.ann.Rds	data/Ave_RD_by1kbwindows_paad.Rds
+PAAD	INDEL	data/PAAD.sINDEL.ann.Rds	data/Ave_RD_by1kbwindows_paad.Rds
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● A GRanges object in Rds format with genomic regions and required column `type`. These are first lines of the file with genomic element regions:
+```bash
+GRanges object with 889848 ranges and 3 metadata columns:
+           seqnames            ranges strand |              gene_name
+              <Rle>         <IRanges>  <Rle> |            <character>
+       [1]     chr1       63419-65418      + |                  OR4F5
+       [2]     chr1       65419-65433      + |                  OR4F5
+       [3]     chr1       65434-65519      + |                  OR4F5
+       [4]     chr1       65520-65564      + |                  OR4F5
+       [5]     chr1       65565-65573      + |                  OR4F5
+       ...      ...               ...    ... .                    ...
+  [889844]     chrY 21820455-21820734      * | OFD1P16Y,ENSG0000028..
+  [889845]     chrY 26315142-26315389      * |             PPP1R12BP1
+  [889846]     chrY 26441509-26441720      * |             intergenic
+  [889847]     chrY 26563051-26563261      * |                TPTE2P4
+  [889848]     chrY 56685452-56685708      * |             intergenic
+                        gene_type        type
+                      <character> <character>
+       [1]         protein_coding    PROMOTER
+       [2]         protein_coding        5UTR
+       [3]         protein_coding    PROMOTER
+       [4]         protein_coding        5UTR
+       [5]         protein_coding         CDS
+       ...                    ...         ...
+  [889844] unprocessed_pseudoge..        CTCF
+  [889845] unprocessed_pseudogene        CTCF
+  [889846]                     NA        CTCF
+  [889847] unprocessed_pseudogene        CTCF
+  [889848]                     NA        CTCF
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●Output directory to store results
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●Column for sample ID
+**Warning:** Input mutation GRanges object must contain columns:
+● REF: denotes reference allele
+● ALT: denotes alternative allele
+● CONSEQUENCE: comma-separated list of ALT consequences (see `data/PAAD.sSNV.ann.Rds`)
+● NUM_TOOLS: number of ALT-finding tools 
+● LC: linguistic complexity within 80 base-pair vicinity of ALT
+● CADD_scaled: scaled CADD score for ALT
+
+## Usage
+```bash
+Usage: 
+Rscript essis.R --ge-file GE-FILE --mut-file MUT-FILE --output-dir OUTPUT-DIR  --id-col IDCOL [options]
+GE-FILE: full path to GRanges Rds obj with genomic element regions and types
+MUT-FILE: full path to tab-delimited file with sample info on tumor, mutation class and GRanges Rds obj with annotated mutations
+OUTPUT-DIR: directory to store results
+ID-COL: sample ID column, used as fishHook covariate
+
+Options:
+--gtf-path=GTF-PATH
+       full path to GTF file, considers all regions outside of types in GE-FILE as 'intergenic'
+--repli=REPLI
+       full path to file with replication times per genomic region, used as fishHook covariate
+--dinuc=DINUC
+       full path to file with dinucleotide percentages per genomic region, used as fishHook covariate
+--trinuc=TRINUC
+       full path to file with trinucleotide percentages per genomic region, used as fishHook covariate
+--id-cap=ID-CAP
+       upper mutation limit to consider per genomic region per sample, used as fishHook covariate
+--cores=CORES
+       number of utilized threads, used as fishHook covariate
+--tile-size=TILE-SIZE
+       tile size, used as fishHook covariate
+--tasks=TASKS
+       number of processes, used fo fishHook run (not recommended to set > 1)
+--min-cadd=MIN-CADD
+      minimum scaled CADD score to consider mutation for effector status
+--ranking-types=RANKING-TYPES
+      comma-separated list of element types to rank
+--coding-types=CODING-TYPES
+      comma-separated list of coding element types; requires binary column LOFTEE (HC/NC) in mutation file
+--regulatory-types=REGULATORY-TYPES
+      comma-separated list of regulatory element types; requires columns motif_gain_status and motif_break_status in mutation file with factors 0 and 1.
+--mirna_binding-types=MIRNA_BINDING-TYPES
+      comma-separated list of miRNA-binding element types; requires column mirBS_status in mutation file with factors 0 and 1.
+--mirna-type=MIRNA-TYPE
+      miRNA label
+--ctcf-type=CTCF-TYPE
+      CTCF-binding motif label; requires columns motif_gain_status and motif_break_status with factors 0 and 1, and column motif_name_break with motif name in mutation file
+--intron-types=INTRON-TYPES
+      comma-separated list of intronic element types to identify splice sites; requires column spliceSiteMod_status in mutation file with factors 0 and 1.
+```
+
+## Output
+ESSIS writes parsed genomic element Rds files to `OUTPUT-DIR/parsed_elements`, fishHook results to `OUTPUT-DIR/fishHook` and mutations with effector flags to `OUTPUT-DIR/final_results`.
+Final mutation files contain same columns as input Rds files with additional columns `effector_flag_byrank`, `effector_flag_byrule` and `effector_flag` that combines effectors from both rank-based and rule-based steps.
 
 
