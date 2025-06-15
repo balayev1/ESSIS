@@ -1,5 +1,7 @@
 # ESSIS (Effector Somatic SNV and INDEL Seeker)
+
 <img src="images/ESSIS_logo.png" alt="ESSIS workflow" width="400" height="400"/>
+
 ## Table of Contents
 
 ● [Introduction](#introduction)  
