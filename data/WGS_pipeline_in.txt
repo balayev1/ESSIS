@@ -1,3 +1,3 @@
 tumor	class	mut_path	ave_read_depth
-PAAD	SNV	/users/1/balay011/WGS_mutations/WGS_NONCHORD/variants/somatic/PAAD.sSNV.ann.Rds	/home/aventeic/balay011/references/covariate_files4fishhook/read_depth/PAAD/Ave_RD_by1kbwindows_paad.Rds
-PAAD	INDEL	/users/1/balay011/WGS_mutations/WGS_NONCHORD/variants/somatic/PAAD.sINDEL.ann.Rds	/home/aventeic/balay011/references/covariate_files4fishhook/read_depth/PAAD/Ave_RD_by1kbwindows_paad.Rds
+PAAD	SNV	data/PAAD.sSNV.ann.Rds	data/Ave_RD_by1kbwindows_paad.Rds
+PAAD	INDEL	data/PAAD.sINDEL.ann.Rds	data/Ave_RD_by1kbwindows_paad.Rds
