@@ -130,6 +130,7 @@ GRanges object with 889848 ranges and 3 metadata columns:
 Usage:
 
 Rscript essis.R --ge-file GE-FILE --mut-file MUT-FILE --output-dir OUTPUT-DIR  --id-col IDCOL [options]
+
        GE-FILE: full path to GRanges Rds obj with genomic element regions and types
        MUT-FILE: full path to tab-delimited file with sample info on tumor, mutation class and GRanges Rds obj with annotated mutations
        OUTPUT-DIR: directory to store results
