@@ -112,17 +112,18 @@ GRanges object with 889848 ranges and 3 metadata columns:
   [889848]                     NA        CTCF
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●Output directory to store results
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●Column for sample ID
-
 **Warning:** Input mutation GRanges object must contain columns:
 
 ● REF: denotes reference allele
+
 ● ALT: denotes alternative allele
+
 ● CONSEQUENCE: comma-separated list of ALT consequences (see `data/PAAD.sSNV.ann.Rds`)
+
 ● NUM_TOOLS: number of ALT-finding tools 
+
 ● LC: linguistic complexity within 80 base-pair vicinity of ALT
+
 ● CADD_scaled: scaled CADD score for ALT
 
 ## Usage
