@@ -127,12 +127,13 @@ GRanges object with 889848 ranges and 3 metadata columns:
 
 ## Usage
 ```bash
-Usage: 
+Usage:
+
 Rscript essis.R --ge-file GE-FILE --mut-file MUT-FILE --output-dir OUTPUT-DIR  --id-col IDCOL [options]
-GE-FILE: full path to GRanges Rds obj with genomic element regions and types
-MUT-FILE: full path to tab-delimited file with sample info on tumor, mutation class and GRanges Rds obj with annotated mutations
-OUTPUT-DIR: directory to store results
-ID-COL: sample ID column, used as fishHook covariate
+       GE-FILE: full path to GRanges Rds obj with genomic element regions and types
+       MUT-FILE: full path to tab-delimited file with sample info on tumor, mutation class and GRanges Rds obj with annotated mutations
+       OUTPUT-DIR: directory to store results
+       IDCOL: sample ID column, used as fishHook covariate
 
 Options:
 --gtf-path=GTF-PATH
@@ -171,6 +172,7 @@ Options:
 
 ## Output
 ESSIS writes parsed genomic element Rds files to `OUTPUT-DIR/parsed_elements`, fishHook results to `OUTPUT-DIR/fishHook` and mutations with effector flags to `OUTPUT-DIR/final_results`.
+
 Final mutation files contain same columns as input Rds files with additional columns `effector_flag_byrank`, `effector_flag_byrule` and `effector_flag` that combines effectors from both rank-based and rule-based steps.
 
 
