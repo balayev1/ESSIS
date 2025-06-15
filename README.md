@@ -113,8 +113,11 @@ GRanges object with 889848 ranges and 3 metadata columns:
 ```
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●Output directory to store results
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●Column for sample ID
+
 **Warning:** Input mutation GRanges object must contain columns:
+
 ● REF: denotes reference allele
 ● ALT: denotes alternative allele
 ● CONSEQUENCE: comma-separated list of ALT consequences (see `data/PAAD.sSNV.ann.Rds`)
