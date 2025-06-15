@@ -31,8 +31,43 @@ VI. Apply a rule-based filter to flag any remaining mutations satisfying specifi
 
 For a detailed description of biological criteria applied to each element type, please see [documentation](#).
 
+## Dependencies and Installation
+Pipeline ESSIS was implemented on Linux operating system. You’ll need both a conda environment and several R packages installed via `devtools::install_github()`.
 
+### Install dependencies via conda
+We provide `environment.yml` for reproducibility. First, make sure conda is installed. From your terminal, run:
 
+```bash
+if ! command -v conda >/dev/null 2>&1; then
+  echo "Error: Conda is not installed. Please install [miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) or load conda environment on a cluster"
+  exit 1
+fi
+```
+
+To create and activate the environment, run:
+```bash
+conda env create -f environment.yml    # create env with all required packages
+conda activate essis_env               # activate the ESSIS environment
+```
+
+### Install auxiliary dependencies
+Open an R session (or RStudio) and run:
+```r
+install.packages("devtools")
+devtools::install_github("mskilab/fishHook")
+devtools::install_github("mskilab/gUtils")
+devtools::install_github("mskilab/gTrack")
+devtools::install_github("mskilab/gChain")
+devtools::install_github("mskilab/skitools")
+```
+
+### Install ESSIS
+```bash
+git clone https://github.com/balayev1/ESSIS.git  # clone the repo
+cd ESSIS # change dir to ESSIS/
+```
+
+**Warning:** Follow each installation step sequentially! Always run ESSIS from within the `ESSIS/` directory.
 
 
 
