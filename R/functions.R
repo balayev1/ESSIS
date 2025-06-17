@@ -572,7 +572,7 @@ effector_classifier_byrank <- function(
                     keep <- (mcols(mut.gr)$CADD_scaled[avail_idx] >= min_cadd)
                 }
                 
-                cand_idx <- seg_mut_idx[keep]
+                cand_idx <- avail_idx[keep]
                 if (length(cand_idx) == 0) next
 
                 # subtract flagged mutations from excess
