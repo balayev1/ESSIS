@@ -274,8 +274,8 @@ if (file.exists(snv.eff.path) && file.exists(snv.final.rank.path)){
         coding_types = if (is.null(opt$`coding-types`)) NULL else strsplit(opt$`coding-types`, ",")[[1]],
         regulatory_types = if (is.null(opt$`regulatory-types`)) NULL else strsplit(opt$`regulatory-types`, ",")[[1]],
         mirna_binding_types = if (is.null(opt$`mirna_binding-types`)) NULL else strsplit(opt$`mirna_binding-types`, ",")[[1]],
-        mirna_type = if (nzchar(opt$`mirna-type`)) opt$`mirna-type` else NULL,
-        ctcf_type = if (nzchar(opt$`ctcf-type`) ) opt$`ctcf-type` else NULL,
+        mirna_type = if (!is.null(opt$`mirna-type`)) opt$`mirna-type` else NULL,
+        ctcf_type = if (!is.null(opt$`ctcf-type`)) opt$`ctcf-type` else NULL,
         intron_types = if (is.null(opt$`intron-types`)) NULL else strsplit(opt$`intron-types`, ",")[[1]])
 }
 
@@ -294,8 +294,8 @@ if (file.exists(indel.eff.path) && file.exists(indel.final.rank.path)){
         coding_types = if (is.null(opt$`coding-types`)) NULL else strsplit(opt$`coding-types`, ",")[[1]],
         regulatory_types = if (is.null(opt$`regulatory-types`)) NULL else strsplit(opt$`regulatory-types`, ",")[[1]],
         mirna_binding_types = if (is.null(opt$`mirna_binding-types`)) NULL else strsplit(opt$`mirna_binding-types`, ",")[[1]],
-        mirna_type = if (nzchar(opt$`mirna-type`)) opt$`mirna-type` else NULL,
-        ctcf_type = if (nzchar(opt$`ctcf-type`) ) opt$`ctcf-type` else NULL,
+        mirna_type = if (!is.null(opt$`mirna-type`)) opt$`mirna-type` else NULL,
+        ctcf_type = if (!is.null(opt$`ctcf-type`)) opt$`ctcf-type` else NULL,
         intron_types = if (is.null(opt$`intron-types`)) NULL else strsplit(opt$`intron-types`, ",")[[1]])
 }
 
