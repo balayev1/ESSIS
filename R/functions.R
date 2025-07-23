@@ -828,7 +828,7 @@ effector_classifier_byrule <- function(
         }
 
         # 4) Rules for miRNA element
-        if (!is.null(mirna_type) && type == mirna_type) {
+        if (!is.null(mirna_type) && type %in% mirna_type) {
             eff.flag <- eff.flag | (rnafold_status == 1L)
         }
 
@@ -873,7 +873,7 @@ effector_classifier_byrule <- function(
             process_element(elem.gr, type, thr)
         } else if (type %in% mirna_binding_types) {
             process_element(elem.gr, type, thr)
-        } else if (type == mirna_type) {
+        } else if (type %in% mirna_type) {
             process_element(elem.gr, type, NA)
         } else if (type %in% intron_types) {
             process_element(elem.gr, type, NA)
